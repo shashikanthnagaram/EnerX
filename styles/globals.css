@@ -1,33 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-slate-950 text-white;
-  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Override any dark backgrounds */
+#__next,
+#root {
+  background: linear-gradient(135deg, #2d5016 0%, #1a2e1a 50%, #2d5016 100%) !important;
+  min-height: 100vh;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-900;
+  background: #1a2e1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-teal-500/30 rounded-full;
+  background: linear-gradient(135deg, #567d46, #90c695);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-teal-500/50;
+  background: linear-gradient(135deg, #90c695, #567d46);
 }
 
 /* Smooth transitions */
 * {
-  @apply transition-colors duration-200;
+  transition: all 0.2s ease;
+}
+
+/* Float animation for leaves */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse eco animation */
+@keyframes pulse-eco {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-eco {
+  animation: pulse-eco 2s ease-in-out infinite;
+}
+
+/* Glow effect */
+.shadow-glow-green {
+  box-shadow: 0 0 20px rgba(144, 198, 149, 0.5);
+}
+
+/* Organic card style */
+.card-organic {
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.6), rgba(26, 46, 26, 0.8));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 168, 136, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card-organic:hover {
+  border-color: rgba(144, 198, 149, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Organic button */
+.btn-organic {
+  background: linear-gradient(135deg, #567d46, #90c695);
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(144, 198, 149, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-organic:hover {
+  box-shadow: 0 6px 30px rgba(144, 198, 149, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Organic shadows */
+.shadow-organic {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-organic-lg {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(144, 198, 149, 0.2);
 }
